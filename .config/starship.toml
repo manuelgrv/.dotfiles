@@ -1,0 +1,63 @@
+# Starship Configuration
+# Schema for editor completions
+"$schema" = 'https://starship.rs/config-schema.json'
+
+# --- General Prompt Settings ---
+add_newline = false # Do not insert a blank line between shell prompts
+format = """
+$all\
+$fill\
+$username\
+$battery\
+$shell\
+$time\
+$line_break\
+$character
+"""
+
+# --- Modules ---
+
+# Battery Module
+[battery]
+disabled = false
+format = '[$symbol$percentage]($style) in '
+
+[[battery.display]]
+threshold = 100
+style = 'bold green'
+
+[[battery.display]]
+threshold = 10
+style = 'bold red'
+
+# Fill Module
+[fill]
+symbol = " "
+
+# Character Module
+[character]
+success_symbol = '[➜](bold green) '
+error_symbol = '[✗](bold red) '
+
+# Conda Module
+[conda]
+ignore_base = false
+
+# Username Module
+[username]
+style_user = "bold yellow"
+style_root = "bold red"
+format = "[$user]($style) at "
+disabled = false
+show_always = true
+
+# Shell Module
+[shell]
+style = "cyan bold underline"
+disabled = false
+
+# Time Module
+[time]
+disabled = false
+style = "bold yellow"
+format = '[\[$time\]]($style)'
