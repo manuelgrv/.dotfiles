@@ -4,11 +4,6 @@
 # Shared shell configuration for both Bash and Zsh
 # Includes aliases, environment variables, and common functions
 
-# --- Initialization Commands ---
-if [ -z "$TMUX" ]; then
-  command neofetch # Show system info
-fi
-
 # --- Conda ---
 eval "$(conda "shell.$(basename "${SHELL}")" hook)"
 
@@ -60,3 +55,7 @@ alias v="nvim"
 # --- Environment Variables ---
 export PATH="/opt/homebrew/opt/postgresql@16/bin:$PATH" # PostgreSQL
 export XDG_CONFIG_HOME="$HOME/.config"                  # XDG Configurations
+export DYLD_FALLBACK_LIBRARY_PATH="$(brew --prefix)/lib:$DYLD_FALLBACK_LIBRARY_PATH"
+
+# --- Initialization Commands ---
+command neofetch # Show system info

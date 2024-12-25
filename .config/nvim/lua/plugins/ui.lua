@@ -1,4 +1,6 @@
 return {
+  -- Centering Buffer
+  { "shortcuts/no-neck-pain.nvim", version = "*" },
   -- lazy.nvim
   {
     "folke/snacks.nvim",
@@ -13,6 +15,7 @@ return {
               action = ":Yazi",
             },
             { icon = " ", key = "f", desc = "Find File", action = ":lua Snacks.dashboard.pick('files')" },
+            { icon = "󰜦", key = "o", desc = "New Obsidian Note", action = ":Lazy load obsidian.nvim | ObsidianNew" },
             { icon = " ", key = "n", desc = "New File", action = ":ene | startinsert" },
             { icon = " ", key = "g", desc = "Find Text", action = ":lua Snacks.dashboard.pick('live_grep')" },
             { icon = " ", key = "r", desc = "Recent Files", action = ":lua Snacks.dashboard.pick('oldfiles')" },

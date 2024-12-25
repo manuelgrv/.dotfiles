@@ -1,6 +1,31 @@
 return {
   -- Neotree configuration
   {
+    "3rd/image.nvim",
+    event = "VeryLazy",
+    enabled = false,
+    build = false,
+    dependencies = {
+      {
+        "nvim-treesitter/nvim-treesitter",
+        build = ":TSUpdate",
+      },
+    },
+    opts = {
+      backend = "kitty",
+      integrations = {
+        markdown = {
+          enabled = true,
+          floating_windows = false,
+          filetypes = { "markdown" },
+        },
+      },
+      max_width = nil,
+      max_height = 16,
+      window_overlap_clear_enabled = true,
+    },
+  },
+  {
     "nvim-neo-tree/neo-tree.nvim",
     opts = {
       filesystem = {
@@ -106,6 +131,7 @@ return {
         date_format = "%Y-%m-%d",
         time_format = "%H:%M",
       },
+      preferred_link_style = "wiki",
       note_id_func = function(title)
         local suffix = ""
         if title ~= nil then
@@ -123,6 +149,7 @@ return {
         end
         local out = {
           created_at = os.date("!%Y-%m-%d"),
+          aliases = note.aliases,
           id = note.id,
           reviewed_at = os.date("!%Y-%m-%d"),
           source = note.metadata and note.metadata.sources or {},
@@ -145,12 +172,26 @@ return {
         local content = table.concat({ frontmatter, "", title, "", body }, "\n")
         return content
       end,
+      follow_img_func = function(img)
+        vim.fn.jobstart({ "qlmanage", "-p", img })
+      end,
+      image_name_func = function()
+        return string.format("%s-img", os.time())
+      end,
+      attachments = {
+        img_folder = "attachments",
+        confirm_img_paste = false,
+        img_text_func = function(client, path)
+          path = client:vault_relative_path(path) or path
+          return string.format("![%s](%s)", path.name, path)
+        end,
+      },
     },
     keys = {
       { "<leader>on", "<cmd>ObsidianNew<cr>", desc = "New note" },
       { "<leader>ot", "<cmd>ObsidianNewFromTemplate<cr>", desc = "New note from template" },
       { "<leader>of", "<cmd>ObsidianSearch<cr>", desc = "Find notes" },
-      { "<leader>opi", "<cmd>ObsidianPasteImage<cr>", desc = "Paste image in note" },
+      { "<leader>opi", "<cmd>ObsidianPasteImg<cr>", desc = "Paste image in note" },
       { "<leader>or", "<cmd>ObsidianRename<cr>", desc = "Rename note in current buffer" },
     },
   },

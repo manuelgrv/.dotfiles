@@ -1,2 +1,8 @@
 .config/neofetch/img/
 .DS_Store
+node_modules/
+.config/epr/
+.config/raycast/
+.config/nushell/history.txt
+.config/yazi/plugins
+.config/yazi/flavors

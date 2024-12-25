@@ -1,45 +1,34 @@
 return {
   {
-    "hrsh7th/nvim-cmp",
-    version = false,
-    opts = function(_, opts)
-      local cmp = require("cmp")
-      opts.mapping = cmp.mapping.preset.insert({
-        ["<CR>"] = cmp.mapping(function(fallback)
-          fallback()
-        end, { "i", "s" }),
-      })
-      opts.experimental = {
-        ghost_text = false,
-      }
-    end,
+    "saghen/blink.cmp",
+    opts = {
+      completion = {
+        ghost_text = {
+          enabled = false,
+        },
+      },
+      keymap = {
+        preset = "default",
+        ["<C-y>"] = { "select_and_accept" },
+      },
+    },
   },
   {
-    "hrsh7th/cmp-cmdline",
-    event = "InsertEnter",
-    config = function()
-      local cmp = require("cmp")
-      local config = cmp.get_config()
-      table.insert(config.sources, {
-        name = "path",
-      })
-      table.insert(config.sources, {
-        name = "cmdline",
-        option = {
-          ignore_cmds = { "Man", "!" },
+    "folke/noice.nvim",
+    dependencies = {
+      "MunifTanjim/nui.nvim",
+      "rcarriga/nvim-notify",
+    },
+    opts = {
+      cmdline = {
+        view = "cmdline_popup", -- Use a popup UI for the command-line
+        format = {
+          cmdline = { icon = ">" },
         },
-      })
-      config.mapping = cmp.mapping.preset.cmdline()
-      -- `:` cmdline setup.
-      cmp.setup.cmdline(":", config)
-      -- `/` cmdline setup.
-      cmp.setup.cmdline("/", {
-        mapping = cmp.mapping.preset.cmdline(),
-        sources = {
-          { name = "buffer" },
-        },
-      })
-      cmp.setup(config)
-    end,
+      },
+      presets = {
+        command_palette = true, -- Enable command palette
+      },
+    },
   },
 }
