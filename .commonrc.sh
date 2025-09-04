@@ -53,7 +53,7 @@ alias vim="nvim"
 alias v="nvim"
 
 # --- Environment Variables ---
-export PATH="/opt/homebrew/opt/postgresql@16/bin:$PATH" # PostgreSQL
+export PATH="/opt/homebrew/opt/postgresql@17/bin:$PATH" # PostgreSQL
 export XDG_CONFIG_HOME="$HOME/.config"                  # XDG Configurations
 export DYLD_FALLBACK_LIBRARY_PATH="$(brew --prefix)/lib:$DYLD_FALLBACK_LIBRARY_PATH"
 

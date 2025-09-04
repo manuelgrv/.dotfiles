@@ -14,9 +14,15 @@ return {
               desc = "File Explorer",
               action = ":Yazi",
             },
-            { icon = " ", key = "f", desc = "Find File", action = ":lua Snacks.dashboard.pick('files')" },
             { icon = "󰜦", key = "o", desc = "New Obsidian Note", action = ":Lazy load obsidian.nvim | ObsidianNew" },
+            {
+              icon = "󱘶",
+              key = "i",
+              desc = "Find Obsidian Note",
+              action = ":Lazy load obsidian.nvim | ObsidianSearch",
+            },
             { icon = " ", key = "n", desc = "New File", action = ":ene | startinsert" },
+            { icon = " ", key = "f", desc = "Find File", action = ":lua Snacks.dashboard.pick('files')" },
             { icon = " ", key = "g", desc = "Find Text", action = ":lua Snacks.dashboard.pick('live_grep')" },
             { icon = " ", key = "r", desc = "Recent Files", action = ":lua Snacks.dashboard.pick('oldfiles')" },
             {

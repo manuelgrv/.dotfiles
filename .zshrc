@@ -50,5 +50,8 @@ eval "$(zoxide init zsh)"
 # --- ZSH Starship ---
 eval "$(starship init zsh)"
 
+# --- Environment Variabes for ZSH ---
+export PIPENV_SHELL=/bin/zsh
+
 # --- Source Common Configurations ---
 source ~/.commonrc.sh

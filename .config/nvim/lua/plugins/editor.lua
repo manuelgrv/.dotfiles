@@ -116,6 +116,7 @@ return {
     ft = "markdown",
     dependencies = {
       "nvim-lua/plenary.nvim",
+      "hrsh7th/nvim-cmp",
     },
     opts = {
       workspaces = {
@@ -124,7 +125,7 @@ return {
           path = "~/kms",
         },
       },
-      notes_subdir = "00_INBOX",
+      notes_subdir = "00-INBOX",
       new_notes_location = "notes_subdir",
       templates = {
         folder = "templates",
@@ -132,6 +133,9 @@ return {
         time_format = "%H:%M",
       },
       preferred_link_style = "wiki",
+      completion = {
+        blink = true,
+      },
       note_id_func = function(title)
         local suffix = ""
         if title ~= nil then
@@ -194,5 +198,14 @@ return {
       { "<leader>opi", "<cmd>ObsidianPasteImg<cr>", desc = "Paste image in note" },
       { "<leader>or", "<cmd>ObsidianRename<cr>", desc = "Rename note in current buffer" },
     },
+    config = function(_, opts)
+      require("obsidian").setup(opts)
+
+      -- HACK: fix error, disable completion.nvim_cmp option, manually register sources
+      local cmp = require("cmp")
+      cmp.register_source("obsidian", require("cmp_obsidian").new())
+      cmp.register_source("obsidian_new", require("cmp_obsidian_new").new())
+      cmp.register_source("obsidian_tags", require("cmp_obsidian_tags").new())
+    end,
   },
 }
