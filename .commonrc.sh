@@ -59,3 +59,7 @@ export DYLD_FALLBACK_LIBRARY_PATH="$(brew --prefix)/lib:$DYLD_FALLBACK_LIBRARY_P
 
 # --- Initialization Commands ---
 command neofetch # Show system info
+
+# --- API Keys ---
+
+source ~/.secrets.sh
