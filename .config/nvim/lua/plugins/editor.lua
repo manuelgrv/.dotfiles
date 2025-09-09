@@ -1,4 +1,13 @@
 return {
+  {
+    "MeanderingProgrammer/render-markdown.nvim",
+    dependencies = { "nvim-treesitter/nvim-treesitter" },
+    ---@module 'render-markdown'
+    ---@type render.md.UserConfig
+    opts = {
+      heading = { enabled = false },
+    },
+  },
   -- Neotree configuration
   {
     "3rd/image.nvim",
