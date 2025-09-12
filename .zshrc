@@ -55,3 +55,8 @@ export PIPENV_SHELL=/bin/zsh
 
 # --- Source Common Configurations ---
 source ~/.commonrc.sh
+
+. "$HOME/.local/bin/env"
+
+autoload -U +X bashcompinit && bashcompinit
+complete -o nospace -C /opt/homebrew/bin/terraform terraform

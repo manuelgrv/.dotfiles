@@ -10,3 +10,5 @@ eval "$(starship init bash)"
 eval "$(zoxide init bash)"
 
 source ~/.commonrc.sh
+
+. "$HOME/.local/bin/env"

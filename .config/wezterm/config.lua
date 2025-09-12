@@ -33,7 +33,7 @@ config.font_rules = {
 		font = wezterm.font("Hack Nerd Font", { weight = "Bold", italic = true }),
 	},
 }
-config.font_size = 14
+config.font_size = 12.5
 
 -- --- Tab Bar Configuration ---
 config.use_fancy_tab_bar = true -- Enable fancy tab bar

@@ -50,4 +50,23 @@ return {
       },
     },
   },
+  {
+    "terrortylor/nvim-comment",
+    init = function()
+      -- optional: leader-level mappings off if you don’t want them
+      vim.g.nvim_comment_no_mappings = 0
+    end,
+    config = function()
+      require("nvim_comment").setup({
+        marker_padding = true, -- space after comment markers
+        comment_empty = false, -- don’t comment empty lines
+        comment_empty_trim_whitespace = true,
+        create_mappings = true, -- `gcc`/`gc{motion}`
+        line_mapping = "gcc",
+        operator_mapping = "gc",
+        hook = nil, -- custom pre-hook if needed
+      })
+    end,
+    keys = { { "gcc", mode = { "n", "v" } }, { "gc", mode = { "n", "v" } } },
+  },
 }

@@ -6,6 +6,7 @@ return {
     ---@type render.md.UserConfig
     opts = {
       heading = { enabled = false },
+      html = { comment = { conceal = false } },
     },
   },
   -- Neotree configuration
