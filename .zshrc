@@ -60,3 +60,9 @@ source ~/.commonrc.sh
 
 autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /opt/homebrew/bin/terraform terraform
+
+# Added by dbt installer
+export PATH="$PATH:/Users/manuelrodval/.local/bin"
+
+# dbt aliases
+alias dbtf=/Users/manuelrodval/.local/bin/dbt

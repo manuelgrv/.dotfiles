@@ -63,9 +63,16 @@ style = "bold yellow"
 format = '[\[$time\]]($style)'
 
 # UV Python interpreter
+[python]
+disabled = true
+
 [custom.uv_python]
 command = "uv python find --show-version"
 when = "uv --version >/dev/null 2>&1 && test -e ./pyproject.toml"
 shell = "bash"
 format = "via [uv 🐍 $output]($style) "
 style = "yellow bold"
+
+
+[package]
+disabled = true

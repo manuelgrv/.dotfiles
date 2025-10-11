@@ -19,6 +19,12 @@ if [ -d "$HOME/.local/bin" ]; then
   export PATH="$HOME/.local/bin:$PATH"
 fi
 
+# --- SPARK ---
+export SPARK_HOME="$(brew --prefix apache-spark)"/libexec
+export PATH="$SPARK HOME/bin:$PATH"
+export JAVA_HOME="$("/usr/libexec/java_home" -v 21)"
+export PATH="$JAVA_HOME/bin:$PATH"
+
 # --- Custom Functions ---
 ## Open `yazi` with temporary cwd file handling
 function yy() {
@@ -46,6 +52,9 @@ alias la="exa -la"
 alias ll="exa -l"
 alias lt="exa -T"
 alias cl="clear"
+alias kms="cd ~/kms && nvim"
+alias uvim="uv run nvim"
+alias urun="uv run python src/main.py"
 
 ## Programs
 alias g="git"
