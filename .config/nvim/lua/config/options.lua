@@ -11,3 +11,7 @@ vim.cmd("command! WA wa")
 vim.cmd("command! Wa wa")
 vim.cmd("command! QA qa")
 vim.cmd("command! Qa qa")
+
+-- Folding
+vim.opt.foldmethod = "indent"
+vim.opt.foldenable = true

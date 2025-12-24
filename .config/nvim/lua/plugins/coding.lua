@@ -1,5 +1,29 @@
 return {
   {
+    "danymat/neogen",
+    version = "*",
+    keys = {
+      {
+        "<leader>cn",
+        function()
+          require("neogen").generate()
+        end,
+        desc = "Generate docstring",
+      },
+    },
+    config = function()
+      require("neogen").setup({
+        languages = {
+          python = {
+            template = {
+              annotation_convention = "google_docstrings",
+            },
+          },
+        },
+      })
+    end,
+  },
+  {
     "saghen/blink.cmp",
     enabled = true,
     dependencies = { "saghen/blink.compat" },

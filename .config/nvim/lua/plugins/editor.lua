@@ -70,8 +70,6 @@ return {
       },
     },
   },
-
-  -- TMUX jump between panes
   {
     "christoomey/vim-tmux-navigator",
     cmd = {
@@ -205,7 +203,7 @@ return {
       { "<leader>on", "<cmd>ObsidianNew<cr>", desc = "New note" },
       { "<leader>ot", "<cmd>ObsidianNewFromTemplate<cr>", desc = "New note from template" },
       { "<leader>of", "<cmd>ObsidianSearch<cr>", desc = "Find notes" },
-      { "<leader>opi", "<cmd>ObsidianPasteImg<cr>", desc = "Paste image in note" },
+      { "<leader>oi", "<cmd>ObsidianPasteImg<cr>", desc = "Paste image in note" },
       { "<leader>or", "<cmd>ObsidianRename<cr>", desc = "Rename note in current buffer" },
     },
     config = function(_, opts)

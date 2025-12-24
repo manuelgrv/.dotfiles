@@ -10,7 +10,7 @@ config.window_padding = {
 	top = 24,
 	bottom = 12,
 }
-config.window_background_opacity = 0.96 -- Slightly transparent background
+config.window_background_opacity = 0.99 -- Slightly transparent background
 config.hide_mouse_cursor_when_typing = true -- Auto-hide mouse cursor when typing
 
 -- --- Theme Configuration ---

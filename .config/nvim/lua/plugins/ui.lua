@@ -1,10 +1,26 @@
 return {
+  -- Keymap hints
+  {
+    "folke/which-key.nvim",
+    opts = {
+      spec = {
+        { "<leader>o", group = "obsidian", icon = "󱉙" },
+        { "<leader>a", group = "avante", icon = "" },
+        { "<leader>of", "find notes", icon = "󰮗" },
+        { "<leader>oi", "paste clipboard image to note", icon = "" },
+        { "<leader>on", "create new note", icon = "" },
+        { "<leader>or", "rename note", icon = "󰑕" },
+      },
+      { "<leader>ot", "create new note from template", icon = "" },
+    },
+  },
   -- Centering Buffer
   { "shortcuts/no-neck-pain.nvim", version = "*" },
   -- lazy.nvim
   {
     "folke/snacks.nvim",
     opts = {
+      image = {},
       dashboard = {
         preset = {
           keys = {
