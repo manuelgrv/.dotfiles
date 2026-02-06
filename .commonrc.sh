@@ -65,6 +65,7 @@ alias v="nvim"
 export PATH="/opt/homebrew/opt/postgresql@17/bin:$PATH" # PostgreSQL
 export XDG_CONFIG_HOME="$HOME/.config"                  # XDG Configurations
 export DYLD_FALLBACK_LIBRARY_PATH="$(brew --prefix)/lib:$DYLD_FALLBACK_LIBRARY_PATH"
+export PATH="$HOME/go/bin:$PATH" #Go Binaries
 
 # --- Initialization Commands ---
 command neofetch # Show system info

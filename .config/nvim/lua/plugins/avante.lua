@@ -10,29 +10,46 @@ return {
     -- Path to a markdown file with predefined instructions/prompts used by Avante
     instructions_file = "avante.md", -- Path to a markdown file with predefined instructions/prompts used by Avante
     provider = "openai",
+    disabled_tools = {
+      "delete_path",
+      "move_path",
+      "bash",
+      "git_commit",
+    },
     providers = {
       openai = {
-        model = "gpt-5-2025-08-07",
-        timeout = 30000,
+        endpoint = "https://api.openai.com/v1",
+        model = "gpt-5",
+        timeout = 60000,
         extra_request_body = {
-          temperature = 1, -- Higher = more creative; lower = more deterministic
+          temperature = 0.2,
+          reasoning_effort = "medium",
+          max_completion_tokens = 16384,
         },
       },
-      ["opena_ai_mini"] = {
-        __inherited_from = "openai", -- Reuse unspecified fields from 'openai'
-        model = "gpt-5-mini-2025-08-07", -- Smaller/faster/cheaper variant
-        timeout = 30000,
-        extra_request_body = {
-          temperature = 1,
-        },
-      },
-      ["opena_ai_nano"] = {
+      openai_mini = {
         __inherited_from = "openai",
-        model = "gpt-5-nano-2025-08-07", -- Even smaller/faster variant
-        timeout = 30000,
+        model = "gpt-5-mini",
         extra_request_body = {
-          temperature = 1,
+          temperature = 0.2,
+          reasoning_effort = "low",
+          max_completion_tokens = 8192,
         },
+      },
+      openai_nano = {
+        __inherited_from = "openai",
+        model = "gpt-5-nano",
+        extra_request_body = {
+          temperature = 0.2,
+          reasoning_effort = "low",
+          max_completion_tokens = 4096,
+        },
+      },
+    },
+    windows = {
+      ask = {
+        floating = false,
+        start_insert = false,
       },
     },
   },

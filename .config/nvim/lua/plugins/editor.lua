@@ -1,12 +1,36 @@
 return {
   {
     "MeanderingProgrammer/render-markdown.nvim",
-    dependencies = { "nvim-treesitter/nvim-treesitter" },
+    dependencies = { "nvim-treesitter/nvim-treesitter", "nvim-mini/mini.nvim" },
     ---@module 'render-markdown'
     ---@type render.md.UserConfig
     opts = {
+      enabled = true,
       heading = { enabled = false },
       html = { comment = { conceal = false } },
+      checkbox = {
+        enabled = true,
+        right_pad = 1,
+        unchecked = {
+          icon = "󰄱",
+          highlight = "RenderMarkdownUnchecked",
+        },
+        checked = {
+          icon = "",
+          highlight = "RenderMarkdownChecked",
+          scope_highlight = "@markup.strikethrough",
+        },
+        custom = {
+          blocked = { raw = "[~]", rendered = "󰰱", highlight = "RenderMarkdownError", scope_highlight = nil },
+          important = { raw = "[!]", rendered = "", highlight = "RenderMarkdownWarn", scope_highlight = nil },
+          todo = { raw = "[>]", rendered = "", highlight = "RenderMarkdownHint", scope_highlight = nil },
+        },
+      },
+      bullet = {
+        enabled = true,
+        icons = { "•", "•", "•", "•" },
+        highlight = "RenderMarkdownHint",
+      },
     },
   },
   -- Neotree configuration
@@ -127,6 +151,9 @@ return {
       "hrsh7th/nvim-cmp",
     },
     opts = {
+      ui = {
+        enable = false,
+      },
       workspaces = {
         {
           name = "kms",

@@ -62,6 +62,7 @@ return {
       "MunifTanjim/nui.nvim",
       "rcarriga/nvim-notify",
     },
+    enabled = true,
     opts = {
       cmdline = {
         view = "cmdline_popup", -- Use a popup UI for the command-line
