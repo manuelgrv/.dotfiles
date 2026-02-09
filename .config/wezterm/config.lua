@@ -7,7 +7,7 @@ config.window_decorations = "RESIZE" -- Only show resize handles
 config.window_padding = {
 	left = 12,
 	right = 12,
-	top = 24,
+	top = 84,
 	bottom = 12,
 }
 config.native_macos_fullscreen_mode = false

@@ -6,6 +6,7 @@ return {
     ---@type render.md.UserConfig
     opts = {
       enabled = true,
+      render_modes = true,
       heading = { enabled = false },
       html = { comment = { conceal = false } },
       checkbox = {
@@ -33,11 +34,10 @@ return {
       },
     },
   },
-  -- Neotree configuration
   {
     "3rd/image.nvim",
     event = "VeryLazy",
-    enabled = false,
+    enabled = true,
     build = false,
     dependencies = {
       {
@@ -49,14 +49,24 @@ return {
       backend = "kitty",
       integrations = {
         markdown = {
-          enabled = true,
-          floating_windows = false,
-          filetypes = { "markdown" },
+          only_render_image_at_cursor_mode = "inline",
         },
       },
       max_width = nil,
       max_height = 16,
-      window_overlap_clear_enabled = true,
+    },
+  },
+  {
+    "3rd/diagram.nvim",
+    dependencies = {
+      "3rd/image.nvim",
+    },
+    opts = {
+      renderer_options = {
+        mermaid = {
+          theme = "dark",
+        },
+      },
     },
   },
   {

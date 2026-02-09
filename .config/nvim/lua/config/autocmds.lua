@@ -11,3 +11,20 @@ vim.api.nvim_create_autocmd("FileType", {
     end
   end,
 })
+
+-- DBML Support
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "dbml",
+  callback = function()
+    vim.lsp.start({
+      name = "dbml-lsp",
+      cmd = { "dbml-lsp" },
+      root_dir = vim.fs.dirname(vim.fs.find({ ".git" }, { upward = true })[1]),
+    })
+  end,
+})
+
+-- Set filetype for .dbml files
+vim.filetype.add({
+  extension = { dbml = "dbml" },
+})

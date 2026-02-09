@@ -20,7 +20,7 @@ return {
   {
     "folke/snacks.nvim",
     opts = {
-      image = {},
+      image = { enabled = false },
       dashboard = {
         preset = {
           keys = {
