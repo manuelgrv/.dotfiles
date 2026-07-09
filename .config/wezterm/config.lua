@@ -8,11 +8,12 @@ config.window_padding = {
 	left = 12,
 	right = 12,
 	top = 84,
+	--top = 24,
 	bottom = 12,
 }
 config.native_macos_fullscreen_mode = false
 config.macos_fullscreen_extend_behind_notch = true
-config.window_background_opacity = 0.95 -- Slightly transparent background
+config.window_background_opacity = 0.98 -- Slightly transparent background
 config.hide_mouse_cursor_when_typing = true -- Auto-hide mouse cursor when typing
 
 -- --- Theme Configuration ---

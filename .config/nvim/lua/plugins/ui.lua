@@ -14,12 +14,13 @@ return {
       { "<leader>ot", "create new note from template", icon = "" },
     },
   },
-  -- Centering Buffer
-  { "shortcuts/no-neck-pain.nvim", version = "*" },
   -- lazy.nvim
   {
     "folke/snacks.nvim",
     opts = {
+      zen = {
+        toggles = { dim = false },
+      },
       image = { enabled = false },
       dashboard = {
         preset = {

@@ -9,6 +9,9 @@ return {
       render_modes = true,
       heading = { enabled = false },
       html = { comment = { conceal = false } },
+      code = {
+        conceal_delimiters = false,
+      },
       checkbox = {
         enabled = true,
         right_pad = 1,
@@ -49,11 +52,11 @@ return {
       backend = "kitty",
       integrations = {
         markdown = {
-          only_render_image_at_cursor_mode = "inline",
+          only_render_image_at_cursor_mode = "popup",
         },
       },
       max_width = nil,
-      max_height = 16,
+      max_height = 32,
     },
   },
   {
@@ -64,7 +67,7 @@ return {
     opts = {
       renderer_options = {
         mermaid = {
-          theme = "dark",
+          enable = false,
         },
       },
     },
@@ -238,7 +241,7 @@ return {
     },
     keys = {
       { "<leader>on", "<cmd>ObsidianNew<cr>", desc = "New note" },
-      { "<leader>ot", "<cmd>ObsidianNewFromTemplate<cr>", desc = "New note from template" },
+      { "<leader>ot", "<cmd>ObsidianTags<cr>", desc = "Tag Picker" },
       { "<leader>of", "<cmd>ObsidianSearch<cr>", desc = "Find notes" },
       { "<leader>oi", "<cmd>ObsidianPasteImg<cr>", desc = "Paste image in note" },
       { "<leader>or", "<cmd>ObsidianRename<cr>", desc = "Rename note in current buffer" },
