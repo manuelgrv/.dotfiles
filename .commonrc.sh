@@ -55,6 +55,7 @@ alias cl="clear"
 alias kms="cd ~/kms && nvim"
 alias uvim="uv run nvim"
 alias urun="uv run python src/main.py"
+alias ff=fastfetch
 
 ## Programs
 alias g="git"
@@ -68,7 +69,7 @@ export DYLD_FALLBACK_LIBRARY_PATH="$(brew --prefix)/lib:$DYLD_FALLBACK_LIBRARY_P
 export PATH="$HOME/go/bin:$PATH" #Go Binaries
 
 # --- Initialization Commands ---
-command neofetch # Show system info
+command fastfetch # Show system info
 
 # --- API Keys ---
 

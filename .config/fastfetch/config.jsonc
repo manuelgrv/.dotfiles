@@ -1,0 +1,176 @@
+{
+  "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/2.66.0/doc/json_schema.json",
+
+  "logo": {
+    "type": "kitty-icat",
+
+    // Fastfetch randomly selects one matching file.
+    // Keep only image files inside this directory.
+    "source": "~/.config/neofetch/img/*",
+
+    "width": 30,
+
+    "padding": {
+      "top": 0,
+      "left": 0,
+      "bottom": 0,
+      "right": 4,
+    },
+
+    "printRemaining": true,
+    "position": "left",
+  },
+
+  "display": {
+    "separator": ": ",
+
+    // Neofetch uses bold/bright text by default.
+    "brightColor": true,
+
+    // Leave colors automatic for the title, keys and values.
+    "color": {
+      "keys": "",
+      "title": "",
+      "output": "",
+      "separator": "",
+    },
+
+    // Neofetch does not align all separators to a fixed column.
+    "key": {
+      "width": 0,
+      "type": "string",
+      "paddingLeft": 0,
+    },
+  },
+
+  "modules": [
+    // Top border
+    "break",
+    {
+      "type": "custom",
+      "format": "┌─────────────────────────────────────┐",
+    },
+
+    {
+      "type": "title",
+      "key": "  Machine",
+      "fqdn": false,
+    },
+    // Equivalent to: info "\n \n OS" distro
+    {
+      "type": "os",
+      "key": "  OS",
+      "format": "{name} {version}",
+    },
+
+    {
+      "type": "host",
+      "key": "  Host",
+      "format": "MacBook Pro M3",
+    },
+
+    {
+      "type": "kernel",
+      "key": "  Kernel",
+    },
+
+    {
+      "type": "uptime",
+      "key": "  Uptime",
+    },
+
+    {
+      "type": "packages",
+      "key": "  Packages",
+      "format": "{all}",
+      "disabled": ["winget"],
+      "combined": false,
+    },
+
+    {
+      "type": "shell",
+      "key": "  Shell",
+    },
+
+    {
+      "type": "display",
+      "key": "  Resolution",
+
+      // Show all detected resolutions on one line without refresh rates.
+      "compactType": "original",
+      "preciseRefreshRate": false,
+      "order": null,
+    },
+
+    {
+      "type": "de",
+      "key": "  DE",
+    },
+
+    {
+      "type": "wm",
+      "key": "  WM",
+      "format": "{pretty-name}",
+      "detectPlugin": true,
+    },
+
+    {
+      "type": "terminal",
+      "key": "  Terminal",
+    },
+
+    {
+      "type": "cpu",
+      "key": "  CPU",
+      "format": "{name}",
+      "temp": false,
+      "showPeCoreCount": true,
+      "tempSensor": "",
+    },
+
+    {
+      "type": "gpu",
+      "key": "  GPU",
+      "format": "{name}",
+      "driverSpecific": false,
+      "detectionMethod": "auto",
+      "temp": false,
+      "hideType": "none",
+      "percent": {
+        "green": 50,
+        "yellow": 80,
+        "type": 0,
+      },
+    },
+
+    {
+      "type": "battery",
+      "key": "  Battery",
+      "temp": false,
+      "format": "{capacity}",
+      "percent": {
+        "green": 50,
+        "yellow": 20,
+        "type": 0,
+      },
+    },
+
+    // Bottom border
+    {
+      "type": "custom",
+      "format": "└─────────────────────────────────────┘",
+    },
+
+    // Equivalent to: prin "\n"
+    "break",
+
+    // Colored footer:
+    // gray, red, green, yellow, blue, magenta, cyan and white.
+    {
+      "type": "custom",
+      "format": "  {#1;90}──{#1;31}────{#1;32}────{#1;33}────{#1;34}────{#1;35}────{#1;36}────{#1;37}──{#}",
+    },
+    "break",
+    "break",
+  ],
+}

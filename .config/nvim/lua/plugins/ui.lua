@@ -21,7 +21,7 @@ return {
       zen = {
         toggles = { dim = false },
       },
-      image = { enabled = false },
+      image = { enabled = true },
       dashboard = {
         preset = {
           keys = {

@@ -13,7 +13,7 @@ bold_font        auto
 italic_font      auto
 bold_italic_font auto
 
-font_size 14
+font_size 13
 
 
 # ---------------------------------------------------------
@@ -24,9 +24,15 @@ font_size 14
 # and resize behavior.
 hide_window_decorations titlebar-only
 
+# WezTerm equivalent:
+# left   = 12
+# right  = 12
+# top    = 84
+# bottom = 12
+#
 # Kitty order:
 # top right bottom left
-window_padding_width 48 12 12 12
+window_padding_width 12 12 12 12
 
 # Keep any unavoidable extra cell-space aligned consistently.
 placement_strategy top-left
@@ -68,6 +74,7 @@ macos_show_window_title_in none
 
 # Use the terminal background for any remaining titlebar area.
 # macos_titlebar_color background
+
 
 # ---------------------------------------------------------
 # Initial window size
@@ -215,6 +222,6 @@ map cmd+0     change_font_size all 0
 # ---------------------------------------------------------
 
 # BEGIN_KITTY_THEME
-# Gruvbox Material Dark Medium
+# Gruvbox Dark Soft
 include current-theme.conf
 # END_KITTY_THEME
